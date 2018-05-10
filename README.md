@@ -12,8 +12,8 @@ Dockerfile基于[docker hub的node镜像,tag为node:6](https://hub.docker.com/r/
 
 注意低于以下系统版本需要安装[Docker Toolbox，需要socks5全局代理访问](https://docs.docker.com/toolbox/overview/)
     
-    windows10 pro
-    
+    windows 10 professional
+    
     Mac OS Yosemite 10.10.3
  
 - windows
@@ -27,6 +27,9 @@ Dockerfile基于[docker hub的node镜像,tag为node:6](https://hub.docker.com/r/
     (docker-ce-desktop-mac)https://store.docker.com/editions/community/docker-ce-desktop-mac
     
 ### 拉取制作好的image
+```
+docker pull dockerdock/package:v1
+```
 
 ### 运行-打包
 
@@ -35,4 +38,7 @@ Dockerfile基于[docker hub的node镜像,tag为node:6](https://hub.docker.com/r/
   docker run -v `pwd`:/www -it pack bash
 ```
   
-2. (打包) 执行 ```. ./pack```
+2. (打包) 执行 
+```
+    . ./pack
+```
