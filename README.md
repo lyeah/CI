@@ -39,6 +39,12 @@ docker pull dockerdock/package:v1
 ```
   
 2. (打包) 执行 
+
+选项-f: 只前台打包  
+
+选项-b: 只后台打包  
+
+选项-fb:前后台同时打包
 ```
-    . ./pack
+    . ./pack [-f][-b]
 ```
