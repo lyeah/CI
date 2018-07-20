@@ -26,17 +26,32 @@ Dockerfile基于[docker hub的node镜像,tag为node:6](https://hub.docker.com/r/
     
     MAC-OSX安装[docker-ce-desktop-mac](https://store.docker.com/editions/community/docker-ce-desktop-mac)
     
-### 拉取制作好的image
-```
-docker pull dockerdock/package:v1
-```
+  
+### 生成镜像
+ 1. 线上拉取制作好的镜像
+    
+    ```bash
+    docker pull dockerdock/package:v1
+    ```
+ 2. 通过Dockerfile制作镜像
+    
+    ```bash
+    docker build - < Dockerfile
+    ```
+    或者
+    
+    ```bash
+    cat Dockerfile | docker build -
+    ```
 
 ### 运行-打包
 
-1. (运行) 在项目目录下执行
-```
-  docker run -v `pwd`:/www -it pack bash
-```
+1. (运行) 在项目根目录下执行
+
+    ```bash
+      docker run -v `pwd`:/www -it pack bash
+    ```
+    将本地项目根目录挂载到容器中的www目录
   
 2. (打包) 执行 
 
@@ -45,6 +60,8 @@ docker pull dockerdock/package:v1
     选项-b: 只后台打包  
 
     选项-fb:前后台同时打包
-```
-    . ./pack [-f][-b]
-```
+    ```bash
+        # 在交互式终端下执行
+        cd www/
+        . ./pack [-f][-b]
+    ```
